@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React Learning Platform - Topics</title>
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="topics.css">
+    <!-- Shared Header & Footer CSS -->
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+
+<body>
+    <!-- Dynamic Header -->
+    <div id="header-container"></div>
+
+    <!-- Main Content: Topics Grid -->
+    <main id="main-content">
+        <section class="topics-section">
+            <h2>React Topics</h2>
+            <div class="topic-grid">
+                <!-- Topic Card: Introduction to React -->
+                <div class="topic-card">
+                    <img src="intro_to_react.jpg" alt="Introduction to React">
+                    <h3>Introduction to React</h3>
+                    <p>Learn the fundamentals of React, including components and the virtual DOM.</p>
+                    <a href="intro-react.html" class="btn-secondary">Learn More</a>
+                </div>
+                <!-- Topic Card: JSX and Components -->
+                <div class="topic-card">
+                    <img src="jsx_compone.jpg" alt="JSX and Components">
+                    <h3>JSX and Components</h3>
+                    <p>Discover how to write JSX and build reusable components for your apps.</p>
+                    <a href="jsx-components.html" class="btn-secondary">Learn More</a>
+                </div>
+                <!-- Topic Card: State and Props -->
+                <div class="topic-card">
+                    <img src="state_props.jpg" alt="State and Props">
+                    <h3>State and Props</h3>
+                    <p>Dive into state management and data flow between components.</p>
+                    <a href="state-props.html" class="btn-secondary">Learn More</a>
+                </div>
+                <!-- Topic Card: React Hooks -->
+                <div class="topic-card">
+                    <img src="react-hooks.jpg" alt="React Hooks">
+                    <h3>React Hooks</h3>
+                    <p>Explore hooks to manage state and side effects in functional components.</p>
+                    <a href="react-hooks.html" class="btn-secondary">Learn More</a>
+                </div>
+                <!-- Topic Card: React Router -->
+                <div class="topic-card">
+                    <img src="react-router.jpg" alt="React Router">
+                    <h3>React Router</h3>
+                    <p>Learn how to implement navigation in single-page applications.</p>
+                    <a href="react-router.html" class="btn-secondary">Learn More</a>
+                </div>
+                <!-- Topic Card: Redux & State Management -->
+                <div class="topic-card">
+                    <img src="redux-state.jpg" alt="Redux & State Management">
+                    <h3>Redux & State Management</h3>
+                    <p>Understand how to manage complex state across your application using Redux.</p>
+                    <a href="redux-state.html" class="btn-secondary">Learn More</a>
+                </div>
+                <!-- Topic Card: Context API -->
+                <div class="topic-card">
+                    <img src="context-api.jpg" alt="Context API">
+                    <h3>Context API</h3>
+                    <p>Utilize the Context API for simpler state management in smaller apps.</p>
+                    <a href="context-api.html" class="btn-secondary">Learn More</a>
+                </div>
+                <!-- Topic Card: Performance Optimization -->
+                <div class="topic-card">
+                    <img src="performance.jpg" alt="Performance Optimization">
+                    <h3>Performance Optimization</h3>
+                    <p>Learn techniques to optimize your React application’s performance.</p>
+                    <a href="performance.html" class="btn-secondary">Learn More</a>
+                </div>
+                <!-- Topic Card: Testing React Applications -->
+                <div class="topic-card">
+                    <img src="testing-react.jpg" alt="Testing React Applications">
+                    <h3>Testing React Applications</h3>
+                    <p>Master testing strategies to ensure your React apps are reliable.</p>
+                    <a href="testing-react.html" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Dynamic Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Loader Script for Shared Header/Footer -->
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+    <script>
+        function loadHTML(selector, url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => { document.querySelector(selector).innerHTML = data; })
+                .catch(error => console.error('Error loading ' + url, error));
+        }
+        loadHTML('#header-container', 'header.html');
+        loadHTML('#footer-container', 'footer.html');
+    </script>
+    <!-- Page-specific JS -->
+    <script src="topics.js"></script>
+</body>
+
+</html>

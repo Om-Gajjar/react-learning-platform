@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React Learning Platform - Testimonials</title>
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="testimonials.css">
+    <!-- Shared Header & Footer CSS -->
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+
+<body>
+    <!-- Placeholder for Shared Header -->
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <section class="testimonials-section">
+            <h2>What Our Learners Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide active">
+                    <img src="alex.jpg" alt="Alex">
+                    <div class="testimonial-content">
+                        <p>"This platform changed my approach to learning React. The interactive demos are amazing!"</p>
+                        <h4>- Alex</h4>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <img src="jamie.jpg" alt="Jamie">
+                    <div class="testimonial-content">
+                        <p>"The comprehensive tutorials and hands-on projects helped me level up my skills quickly."</p>
+                        <h4>- Jamie</h4>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <img src="sam.jpg" alt="Sam">
+                    <div class="testimonial-content">
+                        <p>"I've learned so much in such a short time, thanks to the well-structured content."</p>
+                        <h4>- Sam</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button id="prev-btn">&lt;</button>
+                <button id="next-btn">&gt;</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Placeholder for Shared Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Page-specific JS -->
+    <script src="testimonials.js"></script>
+    <!-- Shared Header & Footer JS -->
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+    <!-- Loader Script: Loads header and footer -->
+    <script>
+        function loadHTML(selector, url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector(selector).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading ' + url, error));
+        }
+        loadHTML('#header-container', 'header.html');
+        loadHTML('#footer-container', 'footer.html');
+    </script>
+</body>
+
+</html>

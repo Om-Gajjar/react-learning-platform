@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React Learning Platform - Demo</title>
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="demo.css">
+    <!-- Shared Header & Footer CSS -->
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+
+<body>
+    <!-- Dynamic Header is loaded into this container -->
+    <div id="header-container"></div>
+
+    <!-- Main Content Area -->
+    <main id="main-content">
+        <section class="demo-section">
+            <h2>Interactive React Demos</h2>
+            <p>Explore three interactive demos showcasing React fundamentals.</p>
+
+            <!-- Demo 1: Counter Demo -->
+            <div class="demo-card">
+                <h3>Demo 1: Counter</h3>
+                <p>This demo shows how React manages state. Click the button to increment the counter.</p>
+                <div id="counter-demo"></div>
+            </div>
+
+            <!-- Demo 2: Toggle Demo -->
+            <div class="demo-card">
+                <h3>Demo 2: Toggle</h3>
+                <p>Learn about conditional rendering. Click the button to toggle the message on and off.</p>
+                <div id="toggle-demo"></div>
+            </div>
+
+            <!-- Demo 3: Dynamic List Demo -->
+            <div class="demo-card">
+                <h3>Demo 3: Dynamic List</h3>
+                <p>This demo shows how to render lists and add items dynamically. Add an item to the list below.</p>
+                <div id="list-demo"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Dynamic Footer is loaded into this container -->
+    <div id="footer-container"></div>
+
+    <!-- Shared Header & Footer JS Loader -->
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+    <script>
+        // Simple function to load external HTML into a container element
+        function loadHTML(selector, url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector(selector).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading ' + url, error));
+        }
+        // Load shared header and footer
+        loadHTML('#header-container', 'header.html');
+        loadHTML('#footer-container', 'footer.html');
+    </script>
+
+    <!-- Load React and ReactDOM from CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- Load Babel for inline JSX transpilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- React Demo Components written in JSX -->
+    <script type="text/babel" data-presets="env,react">
+        // -------------------------------
+        // Demo 1: CounterDemo Component
+        // -------------------------------
+        // This component demonstrates state management with a simple counter.
+        function CounterDemo() {
+            // useState hook initializes count to 0.
+            const [count, setCount] = React.useState(0);
+            return (
+                <div style={{ textAlign: 'center', margin: '20px 0' }}>
+                    {/* Display the current count */}
+                    <h4>Counter: {count}</h4>
+                    {/* Button to increment the counter */}
+                    <button
+                        onClick={() => setCount(count + 1)}
+                        style={{
+                            padding: '10px 20px',
+                            fontSize: '16px',
+                            background: '#21a1f1',
+                            color: '#fff',
+                            border: 'none',
+                            borderRadius: '5px',
+                            cursor: 'pointer'
+                        }}
+                    >
+                        Increment
+                    </button>
+                </div>
+            );
+        }
+
+        // ------------------------------
+        // Demo 2: ToggleDemo Component
+        // ------------------------------
+        // This component demonstrates conditional rendering.
+        function ToggleDemo() {
+            // useState hook initializes isVisible to true.
+            const [isVisible, setIsVisible] = React.useState(true);
+            return (
+                <div style={{ textAlign: 'center', margin: '20px 0' }}>
+                    {/* Button toggles the visibility of the message */}
+                    <button
+                        onClick={() => setIsVisible(!isVisible)}
+                        style={{
+                            padding: '10px 20px',
+                            fontSize: '16px',
+                            background: '#21a1f1',
+                            color: '#fff',
+                            border: 'none',
+                            borderRadius: '5px',
+                            cursor: 'pointer',
+                            marginBottom: '15px'
+                        }}
+                    >
+                        Toggle Message
+                    </button>
+                    {/* Conditionally render the message based on isVisible */}
+                    {isVisible && <p style={{ fontSize: '1.2rem', color: '#333' }}>Hello! React makes UI interactive.</p>}
+                </div>
+            );
+        }
+
+        // --------------------------------
+        // Demo 3: ListDemo Component
+        // --------------------------------
+        // This component demonstrates how to render a dynamic list and add items to it.
+        function ListDemo() {
+            // useState hook initializes the list with two default items.
+            const [items, setItems] = React.useState(["Learn JSX", "Understand Components"]);
+            // useState for the current input value.
+            const [inputValue, setInputValue] = React.useState("");
+
+            // Function to add an item to the list if input is not empty.
+            const addItem = () => {
+                if (inputValue.trim() !== "") {
+                    setItems([...items, inputValue.trim()]);
+                    setInputValue("");
+                }
+            };
+
+            return (
+                <div style={{ textAlign: 'center', margin: '20px 0' }}>
+                    {/* Render list items */}
+                    <ul style={{ listStyle: 'none', padding: 0 }}>
+                        {items.map((item, index) => (
+                            <li key={index} style={{
+                                background: '#f9f9f9',
+                                margin: '5px auto',
+                                padding: '10px',
+                                width: '80%',
+                                borderRadius: '5px',
+                                boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                            }}>
+                                {item}
+                            </li>
+                        ))}
+                    </ul>
+                    {/* Input field to add new items */}
+                    <input
+                        type="text"
+                        placeholder="New item..."
+                        value={inputValue}
+                        onChange={(e) => setInputValue(e.target.value)}
+                        style={{
+                            padding: '10px',
+                            width: '60%',
+                            border: '1px solid #ccc',
+                            borderRadius: '5px',
+                            marginRight: '10px'
+                        }}
+                    />
+                    {/* Button to add the new item */}
+                    <button
+                        onClick={addItem}
+                        style={{
+                            padding: '10px 20px',
+                            background: '#21a1f1',
+                            color: '#fff',
+                            border: 'none',
+                            borderRadius: '5px',
+                            cursor: 'pointer'
+                        }}
+                    >
+                        Add Item
+                    </button>
+                </div>
+            );
+        }
+
+        // Render the three demo components into their respective containers.
+        ReactDOM.render(<CounterDemo />, document.getElementById('counter-demo'));
+        ReactDOM.render(<ToggleDemo />, document.getElementById('toggle-demo'));
+        ReactDOM.render(<ListDemo />, document.getElementById('list-demo'));
+    </script>
+
+    <!-- Page-specific JS for demo page (if needed) -->
+    <script src="demo.js"></script>
+</body>
+
+</html>

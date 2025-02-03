@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React Learning Platform - About</title>
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="about.css">
+    <!-- Shared Header & Footer CSS -->
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+
+<body>
+    <!-- Dynamic Header -->
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Parallax Hero Banner -->
+        <section class="hero-banner">
+            <div class="banner-overlay">
+                <h1>About Our Platform</h1>
+                <p>Empowering Developers with Interactive React Education</p>
+            </div>
+        </section>
+
+        <!-- Overview Section -->
+        <section class="overview content-section">
+            <div class="overview-container">
+                <div class="overview-image">
+                    <img src="about.jpg" alt="Our Story">
+                </div>
+                <div class="overview-text">
+                    <h2>Our Story</h2>
+                    <p>
+                        Founded by passionate developers, our React Learning Platform was built to make modern web
+                        development accessible and engaging.
+                        We offer comprehensive tutorials, hands-on projects, and interactive demos to help you master
+                        React.
+                    </p>
+                    <p>
+                        Whether you're a beginner or an experienced developer, our community fosters collaboration and
+                        continuous learning.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision Section -->
+        <section class="mission-vision content-section">
+            <div class="mv-container">
+                <div class="mission">
+                    <h2>Our Mission</h2>
+                    <p>
+                        To empower developers worldwide by providing high-quality, accessible, and interactive React
+                        education.
+                    </p>
+                </div>
+                <div class="vision">
+                    <h2>Our Vision</h2>
+                    <p>
+                        To become the leading platform for learning React, inspiring innovation and fostering a
+                        collaborative tech community.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team content-section">
+            <h2>Meet Our Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="lead devloper.jpg" alt="Alex Johnson">
+                    <h3>Alex Johnson</h3>
+                    <p>Lead Developer</p>
+                </div>
+                <div class="team-member">
+                    <img src="ui-ux designer.jpg" alt="Sara Williams">
+                    <h3>Sara Williams</h3>
+                    <p>UI/UX Designer</p>
+                </div>
+                <div class="team-member">
+                    <img src="michael lee.jpg" alt="Michael Lee">
+                    <h3>Michael Lee</h3>
+                    <p>Content Strategist</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Dynamic Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Page-specific JS -->
+    <script src="about.js"></script>
+    <!-- Shared Header & Footer JS -->
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+    <!-- Loader Script: Loads header and footer dynamically -->
+    <script>
+        function loadHTML(selector, url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector(selector).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading ' + url, error));
+        }
+        loadHTML('#header-container', 'header.html');
+        loadHTML('#footer-container', 'footer.html');
+    </script>
+</body>
+
+</html>

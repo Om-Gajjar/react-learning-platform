@@ -1,0 +1,39 @@
+/* Topic Page Styles */
+#main-content {
+  width: 90%;
+  max-width: 1200px;
+  margin: 100px auto 40px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.topic-detail {
+  padding: 20px;
+}
+
+.topic-detail h1 {
+  font-size: 3rem;
+  color: #21a1f1;
+  margin-bottom: 20px;
+}
+
+.topic-detail img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.topic-detail p,
+.topic-detail ul {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.topic-detail ul {
+  list-style: disc inside;
+}

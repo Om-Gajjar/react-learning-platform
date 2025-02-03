@@ -1,0 +1,115 @@
+/* Testimonials Page Specific Styles */
+#main-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    margin-bottom: 30px;
+    font-size: 2.4rem;
+    color: #21a1f1;
+}
+
+/* Slider Container */
+.testimonial-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 320px;
+    margin-bottom: 20px;
+}
+
+/* Testimonial Slides */
+.testimonial-slide {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.testimonial-slide.active {
+    display: flex;
+    opacity: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Image styling */
+.testimonial-slide img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+/* Testimonial Content */
+.testimonial-content {
+    max-width: 600px;
+    text-align: left;
+}
+
+.testimonial-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.testimonial-content h4 {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Slider Controls */
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.slider-controls button {
+    background: #61dafb;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.slider-controls button:hover {
+    background: #52c0e9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .testimonial-slider {
+        height: auto;
+    }
+
+    .testimonial-slide {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .testimonial-slide img {
+        margin: 0 0 15px;
+    }
+
+    .testimonial-content {
+        text-align: center;
+    }
+}

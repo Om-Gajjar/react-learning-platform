@@ -1,0 +1,176 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure main content is pushed below the fixed header */
+#main-content {
+    margin-top: 80px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('hero.jpg') no-repeat center center/cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 96.8%;
+    height: 94.2%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.hero-overlay h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-overlay p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.hero-overlay .btn {
+    padding: 15px 30px;
+    background: #21a1f1;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+}
+
+.hero-overlay .btn:hover {
+    background: #1a89d4;
+}
+
+/* Features Section */
+.features {
+    padding: 60px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    color: #21a1f1;
+}
+
+.feature-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.feature-card {
+    background: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.feature-card h3 {
+    font-size: 1.8rem;
+    margin: 15px 0 10px;
+    color: #333;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    padding: 0 15px 15px;
+    color: #666;
+}
+
+.btn-secondary {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 10px 20px;
+    background: #61dafb;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #52c0e9;
+}
+
+/* Call-to-Action Section */
+.cta {
+    padding: 60px 20px;
+    background: #21a1f1;
+    color: #fff;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+}
+
+.cta .btn {
+    padding: 15px 30px;
+    background: #fff;
+    color: #21a1f1;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.cta .btn:hover {
+    background: #f0f0f0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-overlay h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-overlay p {
+        font-size: 1.2rem;
+    }
+
+    .feature-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}

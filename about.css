@@ -1,0 +1,186 @@
+/* Global resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f2f5;
+    color: #333;
+}
+
+/* Ensure content doesn’t hide behind fixed header */
+#main-content {
+    margin-top: 80px;
+}
+
+/* Hero Banner with Parallax Effect */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    background: url('about_platform.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px 30px;
+    border-radius: 8px;
+    text-align: center;
+    color: #fff;
+}
+
+.banner-overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.banner-overlay p {
+    font-size: 1.5rem;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 60px 20px;
+    margin: 30px auto;
+    max-width: 1200px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Overview Section */
+.overview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+}
+
+.overview-image {
+    flex: 1 1 400px;
+}
+
+.overview-image img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.overview-text {
+    flex: 1 1 300px;
+}
+
+.overview-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #21a1f1;
+}
+
+.overview-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Mission & Vision Section */
+.mv-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.mv-container div {
+    flex: 1 1 300px;
+}
+
+.mv-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #21a1f1;
+}
+
+.mv-container p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Team Section */
+.team {
+    text-align: center;
+}
+
+.team h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #21a1f1;
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.team-member {
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.team-member img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .overview-container {
+        flex-direction: column;
+    }
+
+    .mv-container {
+        flex-direction: column;
+    }
+
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner-overlay h1 {
+        font-size: 2.5rem;
+    }
+
+    .banner-overlay p {
+        font-size: 1.2rem;
+    }
+}

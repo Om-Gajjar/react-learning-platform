@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Introduction to React - React Learning Platform</title>
+    <!-- Page-specific CSS for Topic Pages -->
+    <link rel="stylesheet" href="intro-react.css">
+    <!-- Shared Header & Footer CSS -->
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+
+<body>
+    <!-- Dynamic Header -->
+    <div id="header-container"></div>
+
+    <!-- Main Content: Topic Details -->
+    <main id="main-content">
+        <section class="topic-detail">
+            <h1>Introduction to React</h1>
+            <img src="intro_to_react.jpg" alt="Introduction to React">
+            <p>
+                In this topic, you will learn the fundamentals of React. React is a powerful JavaScript library for
+                building user interfaces.
+                It allows you to create reusable UI components, manage state efficiently, and build interactive web
+                applications.
+                Topics include setting up a React project, understanding the component-based architecture, the virtual
+                DOM, and more.
+            </p>
+            <h2>Key Concepts</h2>
+            <ul>
+                <li>Component-Based Architecture</li>
+                <li>Virtual DOM</li>
+                <li>JSX Syntax</li>
+                <li>State and Props</li>
+                <li>Lifecycle Methods</li>
+            </ul>
+            <h2>Interactive Demo</h2>
+            <p>Try out the interactive demo below to see React in action:</p>
+            <div id="intro-demo"></div>
+        </section>
+    </main>
+
+    <!-- Dynamic Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Loader Script for Shared Header/Footer -->
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+    <script>
+        function loadHTML(selector, url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => { document.querySelector(selector).innerHTML = data; })
+                .catch(error => console.error('Error loading ' + url, error));
+        }
+        loadHTML('#header-container', 'header.html');
+        loadHTML('#footer-container', 'footer.html');
+    </script>
+    <!-- Page-specific JS for the Topic Page -->
+    <script src="intro-react.js"></script>
+</body>
+
+</html>
