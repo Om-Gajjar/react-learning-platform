@@ -1,14 +1,16 @@
-/* Global Styles */
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f0f2f5;
+* {
     margin: 0;
     padding: 0;
 }
 
-/* Ensure main content is pushed below the fixed header */
+/* Global Styles */
+body {
+    background: #f0f2f5;
+}
+
 #main-content {
-    margin-top: 80px;
+    margin-top: 50px;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 /* Hero Section */

@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 /* Topic Page Styles */
 #main-content {
   width: 90%;

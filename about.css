@@ -2,18 +2,15 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f0f2f5;
-    color: #333;
 }
 
 /* Ensure content doesn’t hide behind fixed header */
 #main-content {
-    margin-top: 80px;
+    margin-top: 50px;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f2f5;
+    color: #333;
+    box-sizing: border-box;
 }
 
 /* Hero Banner with Parallax Effect */

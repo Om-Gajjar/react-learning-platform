@@ -8,11 +8,12 @@
 html,
 body {
     height: 100%;
-    font-family: 'Segoe UI', sans-serif;
 }
 
 /* Full-page background with unique style */
 #main-content {
+    margin-top: 50px;
+    font-family: 'Segoe UI', sans-serif;
     height: calc(100vh - 100px);
     /* Adjust if header/footer height changes */
 }
@@ -72,7 +73,7 @@ body {
     font-size: 2.2rem;
 }
 
-form {
+#contactForm {
     display: flex;
     flex-direction: column;
     gap: 15px;
