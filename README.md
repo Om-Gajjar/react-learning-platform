@@ -86,7 +86,7 @@ The **React Learning Platform** is a modular, multi-page website designed to pro
 1. **Clone the Repository:**
 
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/Om-Gajjar/react-learning-platform.git
    cd react-learning-platform
    ```
 
